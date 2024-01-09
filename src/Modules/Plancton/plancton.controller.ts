@@ -8,8 +8,7 @@ import { PatchPlanctonDto } from "./Dtos/patchPlancton.dto";
 @Controller('plancton')
 export class PlanctonController {
   constructor(
-    private readonly planctonService: PlanctonService,
-    private readonly planctonsController: PlanctonController) {}
+    private readonly planctonService: PlanctonService) {}
 
   @Post()
   async create(@Body() planctonDto : PostPlanctonDto) {
