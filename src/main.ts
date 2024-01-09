@@ -4,7 +4,7 @@ import { DataSource } from 'typeorm';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  console.log(process.env);
+
   const AppDataSource = new DataSource({
     type: 'mongodb',
     host: process.env.DATABASE_HOST,
