@@ -6,13 +6,23 @@ import { ParametersModule } from './Modules/Parameters/parameters.module';
 import { PlanctonModule } from './Modules/Plancton/plancton.module';
 import { ReleveModule } from './Modules/Releve/releve.module';
 import { StationModule } from './Modules/Station/station.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Releve } from './Modules/Releve/releve.entity';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['env/.env.prod', 'env/.env.local', 'env/.env'],
+      envFilePath: ['env/.env.local', 'env/.env.prod', 'env/.env'],
       load: [configuration],
       isGlobal: true,
+    }),
+    TypeOrmModule.forRoot({
+      type: 'mongodb',
+      host: process.env.DATABASE_HOST,
+      port: parseInt(process.env.DATABASE_PORT, 10) || 27017,
+      database: process.env.DATABASE_NAME,
+      entities: [Releve],
+      synchronize: true,
     }),
     NomenclatureModule,
     ParametersModule,
