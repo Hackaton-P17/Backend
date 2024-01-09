@@ -1,7 +1,7 @@
 import { Column } from 'typeorm';
 import { ParameterEntity } from '../Parameters/parameters.entity';
 
-export class ReleveParameterEntity {
+export class TraceParameterEntity {
   @Column()
   valeur: number | string;
 

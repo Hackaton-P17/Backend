@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto';
 
-export class PostReleveParameterDto {
+export class PostTraceParameterDto {
   @ApiProperty({ type: () => String })
   valeur: number | string;
 

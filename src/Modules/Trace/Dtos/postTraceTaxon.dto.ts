@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostTaxonDto } from 'src/Modules/Taxon/Dtos/postTaxon.dto';
 
-export class PostReleveTaxonDto {
+export class PostTraceTaxonDto {
   @ApiProperty()
   taxon: PostTaxonDto;
   @ApiProperty()

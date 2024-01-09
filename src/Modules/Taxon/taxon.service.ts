@@ -24,10 +24,7 @@ export class TaxonService {
   }
 
   async patchOne(id: string, taxonDto: PatchTaxonDto) {
-    await this.taxonRepository.updateOne(
-      { _id: (await this.getTaxonById(id))._id },
-      taxonDto,
-    );
+    await this.taxonRepository.findOneAndUpdate({ _id: id }, taxonDto);
   }
 
   async deleteOneById(id: string): Promise<boolean> {

@@ -4,10 +4,10 @@ import configuration from 'config/configuration';
 import { NomenclatureModule } from './Modules/Nomenclature/nomenclature.module';
 import { ParametersModule } from './Modules/Parameters/parameters.module';
 import { TaxonModule } from './Modules/Taxon/taxon.module';
-import { ReleveModule } from './Modules/Releve/releve.module';
+import { TraceModule } from './Modules/Trace/trace.module';
 import { StationModule } from './Modules/Station/station.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ReleveEntity } from './Modules/Releve/releve.entity';
+import { TraceEntity } from './Modules/Trace/trace.entity';
 import { TaxonEntity } from './Modules/Taxon/taxon.entity';
 
 @Module({
@@ -25,13 +25,13 @@ import { TaxonEntity } from './Modules/Taxon/taxon.entity';
       database: process.env.DATABASE_NAME,
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
-      entities: [ReleveEntity, TaxonEntity],
+      entities: [TraceEntity, TaxonEntity],
       synchronize: true,
     }),
     NomenclatureModule,
     ParametersModule,
     TaxonModule,
-    ReleveModule,
+    TraceModule,
     StationModule,
   ],
   controllers: [],
