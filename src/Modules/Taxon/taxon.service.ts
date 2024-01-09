@@ -4,6 +4,7 @@ import { TaxonEntity } from './taxon.entity';
 import { PostTaxonDto } from './Dtos/postTaxon.dto';
 import { PatchTaxonDto } from './Dtos/patchTaxon.dto';
 import { MongoRepository } from 'typeorm';
+import { ObjectId } from 'mongodb';
 
 @Injectable()
 export class TaxonService {
@@ -24,7 +25,10 @@ export class TaxonService {
   }
 
   async patchOne(id: string, taxonDto: PatchTaxonDto) {
-    await this.taxonRepository.findOneAndUpdate({ _id: id }, taxonDto);
+    await this.taxonRepository.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: taxonDto },
+    );
   }
 
   async deleteOneById(id: string): Promise<boolean> {
