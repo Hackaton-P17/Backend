@@ -11,11 +11,11 @@ export class PlanctonService {
     @InjectRepository(PlanctonEntity)
     private readonly planctonRepository: MongoRepository<PlanctonEntity>,
   ) {}
-  async getAllPlancton() : Promise<PlanctonEntity[]>{
+  async getAllPlancton(): Promise<PlanctonEntity[]> {
     return await this.planctonRepository.find();
   }
 
-  async getPlanctonById(id : string) : Promise<PlanctonEntity>{
+  async getPlanctonById(id: string): Promise<PlanctonEntity> {
     return await this.planctonRepository.findOneBy(id);
   }
 
@@ -23,13 +23,11 @@ export class PlanctonService {
     await this.planctonRepository.insert(planctonDto);
   }
 
-  async patchOne(id:string,planctonDto: PatchPlanctonDto) {
-    await this.planctonRepository.updateOne({'_id':id},planctonDto);
+  async patchOne(id: string, planctonDto: PatchPlanctonDto) {
+    await this.planctonRepository.updateOne({ _id: id }, planctonDto);
   }
 
   async deleteOneById(id: string): Promise<boolean> {
-    
     return (await this.planctonRepository.delete(id)).affected > 0;
   }
-
 }
