@@ -1,19 +1,25 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
-import { TaxonEntity } from "./taxon.entity";
-import { TaxonService } from "./taxon.service";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { TaxonEntity } from './taxon.entity';
+import { TaxonService } from './taxon.service';
 import { PostTaxonDto } from './Dtos/postTaxon.dto';
-import { PatchTaxonDto } from "./Dtos/patchTaxon.dto";
-import { ApiTags } from "@nestjs/swagger";
-
+import { PatchTaxonDto } from './Dtos/patchTaxon.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('taxons')
 @ApiTags('taxons')
 export class TaxonController {
-  constructor(
-    private readonly taxonService: TaxonService) {}
+  constructor(private readonly taxonService: TaxonService) {}
 
   @Post()
-  async create(@Body() taxonDto : PostTaxonDto) {
+  async create(@Body() taxonDto: PostTaxonDto) {
     await this.taxonService.insertOne(taxonDto);
   }
 
@@ -23,7 +29,7 @@ export class TaxonController {
   }
 
   @Patch(':id')
-  async patch(@Param('id') id: string,@Body() taxonDto: PatchTaxonDto) {
+  async patch(@Param('id') id: string, @Body() taxonDto: PatchTaxonDto) {
     await this.taxonService.patchOne(id, taxonDto);
   }
 
@@ -37,5 +43,3 @@ export class TaxonController {
     return await this.taxonService.getAllTaxon();
   }
 }
-
-
