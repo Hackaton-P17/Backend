@@ -1,10 +1,10 @@
 import { Column, Entity, ObjectId, ObjectIdColumn } from 'typeorm';
-import { ReleveParameterEntity } from './releveParameter.entity';
-import { ReleveTaxonEntity } from './releveTaxon.entity';
+import { TraceParameterEntity } from './traceParameter.entity';
+import { TraceTaxonEntity } from './traceTaxon.entity';
 import { StationEntity } from '../Station/station.entity';
 
-@Entity('releve')
-export class ReleveEntity {
+@Entity('trace')
+export class TraceEntity {
   @ObjectIdColumn()
   _id: ObjectId;
 
@@ -18,10 +18,10 @@ export class ReleveEntity {
   description: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @Column((type) => ReleveParameterEntity)
-  parameters: ReleveParameterEntity[];
+  @Column((type) => TraceParameterEntity)
+  parameters: TraceParameterEntity[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @Column((type) => ReleveTaxonEntity)
-  taxons: ReleveTaxonEntity[];
+  @Column((type) => TraceTaxonEntity)
+  taxons: TraceTaxonEntity[];
 }
