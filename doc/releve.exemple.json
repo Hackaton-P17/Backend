@@ -1,0 +1,26 @@
+{
+  "date": "02/07/2023",
+  "description": "",
+  "parameters": [
+    {
+      "name": "°C",
+      "unite": "°C",
+      "isPublic": true,
+      "type": "number",
+      "value": 12
+    },
+    {
+      "name": "Silice",
+      "unite": "mol/L",
+      "isPublic": true,
+      "type": "number",
+      "value": 0.12
+    }
+  ],
+  "planctons": [
+    {
+      "name": "Alexandrium",
+      "quantite": 12
+    }
+  ]
+}

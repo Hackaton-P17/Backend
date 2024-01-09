@@ -1,0 +1,31 @@
+{
+  "name": "Alexandrium",
+  "parameters": [
+    {
+      "name": "°C",
+      "unite": "°C",
+      "isPublic": true,
+      "type": "number"
+    },
+    {
+      "name": "Silice",
+      "unite": "mol/L",
+      "isPublic": true,
+      "type": "number"
+    }
+  ],
+  "seuils": [
+    {
+      "minimum": 0,
+      "maximum": null,
+      "color": "#FF0000",
+      "type": "DANGER"
+    }
+  ],
+  "nomenclature": [
+    {
+      "name": "FAMILY",
+      "value": "Alexandrie, Alexandra"
+    }
+  ]
+}
