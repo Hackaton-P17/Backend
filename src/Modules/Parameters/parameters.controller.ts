@@ -4,15 +4,15 @@ import { PostParametersDto } from './Dtos/postParameters.dto';
 
 @Controller('parameters')
 export class ParametersController {
-    constructor(private readonly parametersService: ParametersService) {}
+  constructor(private readonly parametersService: ParametersService) {}
 
-    @Get()
-    async getAllParameters() {
-        return await this.parametersService.getAllParameters();
-    }
+  @Get()
+  async getAllParameters() {
+    return await this.parametersService.getAllParameters();
+  }
 
-    @Post()
-    async insertReleve(@Body() postParametersDto: PostParametersDto) {
-        return await this.parametersService.insertOne(postParametersDto);
-    }
+  @Post()
+  async insertReleve(@Body() postParametersDto: PostParametersDto) {
+    return await this.parametersService.insertOne(postParametersDto);
+  }
 }

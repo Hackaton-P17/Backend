@@ -1,20 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Parameters } from './parameters.entity';
+import { ParameterEntity } from './parameters.entity';
 import { Repository } from 'typeorm';
-import { PostReleveDto } from './Dtos/postReleve.dto';
+import { PostParametersDto } from './Dtos/postParameters.dto';
 
 @Injectable()
 export class ParametersService {
-    constructor(
-        @InjectRepository(Parameters)
-        private readonly parametersRepository: Repository<Parameters>,
-    ) {}
-    async getAllParameters() {
-        return await this.parametersRepository.find();
-    }
+  constructor(
+    @InjectRepository(ParameterEntity)
+    private readonly parametersRepository: Repository<ParameterEntity>,
+  ) {}
+  async getAllParameters() {
+    return await this.parametersRepository.find();
+  }
 
-    async insertOne(postParametersDto: PostParametersDto) {
-        return await this.parametersRepository.insert(postParametersDto);
-    }
+  async insertOne(postParametersDto: PostParametersDto) {
+    return await this.parametersRepository.insert(postParametersDto);
+  }
 }
