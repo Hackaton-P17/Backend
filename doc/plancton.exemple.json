@@ -6,7 +6,7 @@
       "unite": "°C",
       "isPublic": true,
       "type": "number",
-      "seuils": [
+      "thresholds": [
         {
           "minimum": 35,
           "maximum": null,
@@ -20,7 +20,7 @@
       "unite": "µmol/L",
       "isPublic": true,
       "type": "number",
-      "seuils": [
+      "thresholds": [
         {
           "minimum": null,
           "maximum": 0,
@@ -36,7 +36,7 @@
       ]
     }
   ],
-  "seuils": [
+  "thresholds": [
     {
       "minimum": 0,
       "maximum": null,

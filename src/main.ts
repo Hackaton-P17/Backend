@@ -5,10 +5,10 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-    .setTitle("L'API du Plancton")
+    .setTitle("L'API du Taxon")
     .setDescription('')
     .setVersion('1.0')
-    .addTag('plancton')
+    .addTag('taxon')
     .addTag('parameters')
     .addTag('releve')
     .addTag('nomenclature')

@@ -1,10 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ParameterEntity } from 'src/Modules/Parameters/parameters.entity';
-import { SeuilEntity } from '../seuil.entity';
+import { ThresholdEntity } from '../threshold.entity';
 import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto';
-import { PostSeuilDto } from './postSeuilDto';
+import { PostThresholdDto } from './postThresholdDto';
 
-export class PatchPlanctonDto {
+export class PatchTaxonDto {
   @ApiProperty()
   _id: string;
 
@@ -16,6 +16,6 @@ export class PatchPlanctonDto {
   parameters: PostParameterDto[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @ApiProperty({type: () => [PostSeuilDto]})
-  seuils: PostSeuilDto[];
+  @ApiProperty({type: () => [PostThresholdDto]})
+  thresholds: PostThresholdDto[];
 }

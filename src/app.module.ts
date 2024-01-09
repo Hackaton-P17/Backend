@@ -3,12 +3,12 @@ import { ConfigModule } from '@nestjs/config';
 import configuration from 'config/configuration';
 import { NomenclatureModule } from './Modules/Nomenclature/nomenclature.module';
 import { ParametersModule } from './Modules/Parameters/parameters.module';
-import { PlanctonModule } from './Modules/Plancton/plancton.module';
+import { TaxonModule } from './Modules/Taxon/taxon.module';
 import { ReleveModule } from './Modules/Releve/releve.module';
 import { StationModule } from './Modules/Station/station.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ReleveEntity } from './Modules/Releve/releve.entity';
-import { PlanctonEntity } from './Modules/Plancton/plancton.entity';
+import { TaxonEntity } from './Modules/Taxon/taxon.entity';
 
 @Module({
   imports: [
@@ -25,12 +25,12 @@ import { PlanctonEntity } from './Modules/Plancton/plancton.entity';
       database: process.env.DATABASE_NAME,
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
-      entities: [ReleveEntity, PlanctonEntity],
+      entities: [ReleveEntity, TaxonEntity],
       synchronize: true,
     }),
     NomenclatureModule,
     ParametersModule,
-    PlanctonModule,
+    TaxonModule,
     ReleveModule,
     StationModule,
   ],

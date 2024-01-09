@@ -1,5 +1,5 @@
 import { Column } from 'typeorm';
-import { SeuilEntity } from '../Plancton/seuil.entity';
+import { ThresholdEntity } from '../Taxon/threshold.entity';
 
 export class ParameterEntity {
   @Column()
@@ -15,6 +15,6 @@ export class ParameterEntity {
   type: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @Column((type) => SeuilEntity)
-  seuils: SeuilEntity[];
+  @Column((type) => ThresholdEntity)
+  thresholds: ThresholdEntity[];
 }

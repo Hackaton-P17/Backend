@@ -1,6 +1,6 @@
 import { Column, Entity, ObjectId, ObjectIdColumn } from 'typeorm';
 import { ReleveParameterEntity } from './releveParameter.entity';
-import { RelevePlanctonEntity } from './relevePlancton.entity';
+import { ReleveTaxonEntity } from './releveTaxon.entity';
 import { StationEntity } from '../Station/station.entity';
 
 @Entity('releve')
@@ -22,6 +22,6 @@ export class ReleveEntity {
   parameters: ReleveParameterEntity[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @Column((type) => RelevePlanctonEntity)
-  planctons: RelevePlanctonEntity[];
+  @Column((type) => ReleveTaxonEntity)
+  taxons: ReleveTaxonEntity[];
 }
