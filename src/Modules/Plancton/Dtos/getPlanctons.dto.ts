@@ -6,7 +6,7 @@ import { ObjectId } from 'typeorm';
 export class GetPlanctonDto {
 
   @ApiProperty()
-  _id: ObjectId;
+  _id: string;
 
   @ApiProperty()
   name: string;
