@@ -3,7 +3,7 @@ import { ParameterEntity } from 'src/Modules/Parameters/parameters.entity';
 import { SeuilEntity } from '../seuil.entity';
 import { ObjectId } from 'typeorm';
 
-export class PatchPlanctonDto {
+export class GetPlanctonDto {
 
   @ApiProperty()
   _id: ObjectId;
