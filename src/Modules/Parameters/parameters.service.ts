@@ -1,20 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ParameterEntity } from './parameters.entity';
-import { Repository } from 'typeorm';
-import { PostParametersDto } from './Dtos/postParameters.dto';
+import { MongoRepository } from 'typeorm';
+import { PlanctonEntity } from '../Plancton/plancton.entity';
 
 @Injectable()
 export class ParametersService {
   constructor(
-    @InjectRepository(ParameterEntity)
-    private readonly parametersRepository: Repository<ParameterEntity>,
+    @InjectRepository(PlanctonEntity)
+    private readonly planctonRepository: MongoRepository<PlanctonEntity>,
   ) {}
   async getAllParameters() {
-    return await this.parametersRepository.find();
-  }
-
-  async insertOne(postParametersDto: PostParametersDto) {
-    return await this.parametersRepository.insert(postParametersDto);
+    return await this.planctonRepository.distinct('parameters', {});
   }
 }

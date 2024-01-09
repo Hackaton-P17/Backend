@@ -17,7 +17,7 @@
     },
     {
       "name": "Silice",
-      "unite": "mol/L",
+      "unite": "µmol/L",
       "isPublic": true,
       "type": "number",
       "seuils": [
@@ -48,6 +48,10 @@
     {
       "name": "FAMILY",
       "value": "Alexandrie, Alexandra"
+    },
+    {
+      "name": "CLASS",
+      "value": "Alexandrie, Alexandra Class"
     }
   ]
 }
