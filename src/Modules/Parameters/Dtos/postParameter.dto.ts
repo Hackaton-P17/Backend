@@ -17,7 +17,7 @@ export class PostParameterDto {
   @IsOptional()
   type: string;
 
-  @ApiProperty({ default: [] })
+  @ApiProperty({ default: [], type: () => PostSeuilDto })
   @IsOptional()
   seuils: PostSeuilDto[];
 }
