@@ -8,11 +8,6 @@ async function bootstrap() {
     .setTitle("L'API du Taxon")
     .setDescription('')
     .setVersion('1.0')
-    .addTag('taxon')
-    .addTag('parameters')
-    .addTag('releve')
-    .addTag('nomenclature')
-    .addTag('station')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document, {
