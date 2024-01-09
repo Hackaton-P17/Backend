@@ -11,12 +11,15 @@ export class PlanctonEntity {
   @Column()
   name: string;
 
-  @Column()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Column((type) => ParameterEntity)
   parameters: ParameterEntity[];
 
-  @Column()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Column((type) => SeuilEntity)
   seuils: SeuilEntity[];
 
-  @Column()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Column((type) => NomenclatureEntity)
   nomenclature: NomenclatureEntity[];
 }
