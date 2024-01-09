@@ -1,5 +1,5 @@
 [
-    {
+  {
     "name": "Alexandrium",
     "parameters": [
       {
@@ -7,7 +7,7 @@
         "unite": "°C",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": null,
             "maximum": 35,
@@ -27,7 +27,7 @@
         "unite": "Ph",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": 0,
             "maximum": 8.65,
@@ -47,7 +47,7 @@
         "unite": "µmol/L",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": null,
             "maximum": 0,
@@ -63,7 +63,7 @@
         ]
       }
     ],
-    "seuils": [
+    "thresholds": [
       {
         "minimum": 0,
         "maximum": null,
@@ -90,7 +90,7 @@
         "unite": "°C",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": 10,
             "maximum": 20,
@@ -116,7 +116,7 @@
         "unite": "µmol/L",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": -35,
             "maximum": 0,
@@ -132,7 +132,7 @@
         ]
       }
     ],
-    "seuils": [
+    "thresholds": [
       {
         "minimum": 1000,
         "maximum": null,
@@ -159,7 +159,7 @@
         "unite": "Cheuveu",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": 100000,
             "maximum": 170000,
@@ -185,7 +185,7 @@
         "unite": "Vetement",
         "isPublic": true,
         "type": "number",
-        "seuils": [
+        "thresholds": [
           {
             "minimum": 6,
             "maximum": 10,
@@ -207,7 +207,7 @@
         ]
       }
     ],
-    "seuils": [
+    "thresholds": [
       {
         "minimum": 0,
         "maximum": null,
