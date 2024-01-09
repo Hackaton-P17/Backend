@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { PlanctonEntity } from './plancton.entity';
 import { PostPlanctonDto } from './Dtos/postPlancton.dto';
 import { PatchPlanctonDto } from './Dtos/patchPlancton.dto';
-import { MongoRepository } from 'typeorm/repository/MongoRepository';
+import { MongoRepository } from 'typeorm';
 
 @Injectable()
 export class PlanctonService {
