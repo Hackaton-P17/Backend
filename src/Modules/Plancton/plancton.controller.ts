@@ -16,8 +16,8 @@ export class PlanctonController {
   }
 
   @Get(':id')
-  getById(@Param('id') id: string): Promise<PlanctonEntity> {
-    return this.planctonService.getPlanctonById(id);
+  async getById(@Param('id') id: string): Promise<PlanctonEntity> {
+    return await this.planctonService.getPlanctonById(id);
   }
 
   @Patch(':id')
