@@ -1,0 +1,229 @@
+[
+    {
+    "name": "Alexandrium",
+    "parameters": [
+      {
+        "name": "°C",
+        "unite": "°C",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": null,
+            "maximum": 35,
+            "color": "#00FF00",
+            "type": "POSITIVE"
+          },
+          {
+            "minimum": 35,
+            "maximum": null,
+            "color": "#FF0000",
+            "type": "DANGER"
+          }
+        ]
+      },
+      {
+        "name": "Ph",
+        "unite": "Ph",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": 0,
+            "maximum": 8.65,
+            "color": "#00FF00",
+            "type": "POSITIVE"
+          },
+          {
+            "minimum": 8.65,
+            "maximum": 14,
+            "color": "#FF0000",
+            "type": "DANGER"
+          }
+        ]
+      },
+      {
+        "name": "Silice",
+        "unite": "µmol/L",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": null,
+            "maximum": 0,
+            "color": "#FF0000",
+            "type": "DANGER"
+          },
+          {
+            "minimum": 0,
+            "maximum": 35,
+            "color": "#00FF00",
+            "type": "POSITIVE"
+          }
+        ]
+      }
+    ],
+    "seuils": [
+      {
+        "minimum": 0,
+        "maximum": null,
+        "color": "#FF0000",
+        "type": "DANGER"
+      }
+    ],
+    "nomenclature": [
+      {
+        "name": "FAMILY",
+        "value": "Alexandrie, Alexandra"
+      },
+      {
+        "name": "CLASS",
+        "value": "Alexandrie, Alexandra Class"
+      }
+    ]
+  },
+  {
+    "name": "Dinophysis",
+    "parameters": [
+      {
+        "name": "°C",
+        "unite": "°C",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": 10,
+            "maximum": 20,
+            "color": "#00FF00",
+            "type": "POSITIVE"
+          },
+          {
+            "minimum": 20,
+            "maximum": null,
+            "color": "#FF0000",
+            "type": "DANGER"
+          },
+          {
+            "minimum": null,
+            "maximum": 10,
+            "color": "#FF6600",
+            "type": "CA VAAAAA"
+          }
+        ]
+      },
+      {
+        "name": "Silice",
+        "unite": "µmol/L",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": -35,
+            "maximum": 0,
+            "color": "#FF0000",
+            "type": "DANGER"
+          },
+          {
+            "minimum": 10,
+            "maximum": 35,
+            "color": "#00FF00",
+            "type": "POSITIVE"
+          }
+        ]
+      }
+    ],
+    "seuils": [
+      {
+        "minimum": 1000,
+        "maximum": null,
+        "color": "#00FF00",
+        "type": "POSITIVE"
+      }
+    ],
+    "nomenclature": [
+      {
+        "name": "FAMILY",
+        "value": "Dino, Train"
+      },
+      {
+        "name": "CLASS",
+        "value": "Dino, Train Class"
+      }
+    ]
+  },
+  {
+    "name": "Bastien",
+    "parameters": [
+      {
+        "name": "Cheuveux",
+        "unite": "Cheuveu",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": 100000,
+            "maximum": 170000,
+            "color": "#00FF00",
+            "type": "POSITIF"
+          },
+          {
+            "minimum": 50000,
+            "maximum": 100000,
+            "color": "#FF6600",
+            "type": "BOF"
+          },
+          {
+            "minimum": 0,
+            "maximum": 50000,
+            "color": "#FF0000",
+            "type": "C CHO"
+          }
+        ]
+      },
+      {
+        "name": "Vetements",
+        "unite": "Vetement",
+        "isPublic": true,
+        "type": "number",
+        "seuils": [
+          {
+            "minimum": 6,
+            "maximum": 10,
+            "color": "#00FF00",
+            "type": "NORMAL"
+          },
+          {
+            "minimum": 3,
+            "maximum": 6,
+            "color": "#FF6600",
+            "type": "BON..."
+          },
+          {
+            "minimum": 0,
+            "maximum": 2,
+            "color": "#FF0000",
+            "type": "OOOOOOOOOOH !!!"
+          }
+        ]
+      }
+    ],
+    "seuils": [
+      {
+        "minimum": 0,
+        "maximum": null,
+        "color": "#FF0000",
+        "type": "ON EST MAL"
+      }
+    ],
+    "nomenclature": [
+      {
+        "name": "FAMILY",
+        "value": "Bastien, LeMonnier"
+      },
+      {
+        "name": "CLASS",
+        "value": "Moyenne"
+      }
+    ]
+  }
+]

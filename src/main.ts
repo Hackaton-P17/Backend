@@ -15,7 +15,9 @@ async function bootstrap() {
     .addTag('station')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: { docExpansion: false },
+  });
   await app.listen(parseInt(process.env.APP_PORT, 10) || 3000);
 }
 bootstrap();
