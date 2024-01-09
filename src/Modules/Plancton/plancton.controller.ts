@@ -3,9 +3,11 @@ import { PlanctonEntity } from "./plancton.entity";
 import { PlanctonService } from "./plancton.service";
 import { PostPlanctonDto } from './Dtos/postPlancton.dto';
 import { PatchPlanctonDto } from "./Dtos/patchPlancton.dto";
+import { ApiTags } from "@nestjs/swagger";
 
 
 @Controller('plancton')
+@ApiTags('plancton')
 export class PlanctonController {
   constructor(
     private readonly planctonService: PlanctonService) {}
