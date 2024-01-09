@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { TaxonEntity } from './taxon.entity';
 import { PostTaxonDto } from './Dtos/postTaxon.dto';
 import { PatchTaxonDto } from './Dtos/patchTaxon.dto';
-import { MongoRepository, ObjectId } from 'typeorm';
+import { MongoRepository } from 'typeorm';
 
 @Injectable()
 export class TaxonService {
@@ -24,7 +24,10 @@ export class TaxonService {
   }
 
   async patchOne(id: string, taxonDto: PatchTaxonDto) {
-    await this.taxonRepository.updateOne({ _id: new ObjectId(id) }, taxonDto);
+    await this.taxonRepository.updateOne(
+      { _id: (await this.getTaxonById(id))._id },
+      taxonDto,
+    );
   }
 
   async deleteOneById(id: string): Promise<boolean> {
