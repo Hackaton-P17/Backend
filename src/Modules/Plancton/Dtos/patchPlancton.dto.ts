@@ -1,12 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ParameterEntity } from 'src/Modules/Parameters/parameters.entity';
 import { SeuilEntity } from '../seuil.entity';
-import { ObjectId } from 'typeorm';
 
 export class PatchPlanctonDto {
-
   @ApiProperty()
-  _id: ObjectId;
+  _id: string;
 
   @ApiProperty()
   name: string;
@@ -18,5 +16,4 @@ export class PatchPlanctonDto {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty()
   seuils: SeuilEntity[];
-
 }
