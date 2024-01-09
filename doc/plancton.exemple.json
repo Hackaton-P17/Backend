@@ -5,13 +5,35 @@
       "name": "°C",
       "unite": "°C",
       "isPublic": true,
-      "type": "number"
+      "type": "number",
+      "seuils": [
+        {
+          "minimum": 35,
+          "maximum": null,
+          "color": "#FF0000",
+          "type": "DANGER"
+        }
+      ]
     },
     {
       "name": "Silice",
-      "unite": "mol/L",
+      "unite": "µmol/L",
       "isPublic": true,
-      "type": "number"
+      "type": "number",
+      "seuils": [
+        {
+          "minimum": null,
+          "maximum": 0,
+          "color": "#FF0000",
+          "type": "DANGER"
+        },
+        {
+          "minimum": 0,
+          "maximum": 35,
+          "color": "#00FF00",
+          "type": "POSITIVE"
+        }
+      ]
     }
   ],
   "seuils": [
@@ -26,6 +48,10 @@
     {
       "name": "FAMILY",
       "value": "Alexandrie, Alexandra"
+    },
+    {
+      "name": "CLASS",
+      "value": "Alexandrie, Alexandra Class"
     }
   ]
 }
