@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
-import { PlanctonEntity } from '../Plancton/plancton.entity';
+import { TaxonEntity } from '../Taxon/taxon.entity';
 
 @Injectable()
 export class ParametersService {
   constructor(
-    @InjectRepository(PlanctonEntity)
-    private readonly planctonRepository: MongoRepository<PlanctonEntity>,
+    @InjectRepository(TaxonEntity)
+    private readonly taxonRepository: MongoRepository<TaxonEntity>,
   ) {}
-  async getAllParameters(): Promise<PlanctonEntity[]> {
-    return await this.planctonRepository
+  async getAllParameters(): Promise<TaxonEntity[]> {
+    return await this.taxonRepository
       .aggregate([
         { $unwind: '$parameters' },
         { $project: { parameters: true, _id: false } },

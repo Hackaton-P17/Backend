@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostReleveParameterDto } from './postReleveParameter.dto';
-import { PostRelevePlanctonDto } from './postRelevePlancton.dto';
+import { PostReleveTaxonDto } from './postReleveTaxon.dto';
 import { IsDate } from 'class-validator';
 import { PostStationDto } from 'src/Modules/Station/Dtos/postStation.dto';
 
@@ -14,6 +14,6 @@ export class PostReleveDto {
   description: string;
   @ApiProperty({ type: () => [PostReleveParameterDto] })
   parameters: PostReleveParameterDto[];
-  @ApiProperty({ type: () => [PostRelevePlanctonDto] })
-  planctons: PostRelevePlanctonDto[];
+  @ApiProperty({ type: () => [PostReleveTaxonDto] })
+  taxons: PostReleveTaxonDto[];
 }

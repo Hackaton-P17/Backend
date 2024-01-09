@@ -1,8 +1,8 @@
 import { Column } from 'typeorm';
 
-export type SeuilType = 'DANGER' | 'ALERT' | 'NEUTRAL' | 'SAFE' | 'POSITIVE';
+export type ThresholdType = 'DANGER' | 'ALERT' | 'NEUTRAL' | 'SAFE' | 'POSITIVE';
 
-export class SeuilEntity {
+export class ThresholdEntity {
   @Column()
   minimum: number;
 
@@ -13,5 +13,5 @@ export class SeuilEntity {
   color: string;
 
   @Column()
-  type: SeuilType;
+  type: ThresholdType;
 }

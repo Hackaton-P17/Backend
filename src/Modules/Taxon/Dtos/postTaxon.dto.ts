@@ -1,19 +1,19 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto';
-import { PostSeuilDto } from './postSeuilDto';
+import { PostThresholdDto } from './postThresholdDto';
 import { IsOptional } from 'class-validator';
 
-export class PostPlanctonDto {
+export class PostTaxonDto {
   @ApiProperty()
   name: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @ApiProperty({ type: () => PostParameterDto })
+  @ApiProperty({ type: () => [PostParameterDto] })
   @IsOptional()
   parameters: PostParameterDto[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @ApiProperty({ type: () => PostSeuilDto })
+  @ApiProperty({ type: () => [PostThresholdDto] })
   @IsOptional()
-  seuils: PostSeuilDto[];
+  thresholds: PostThresholdDto[];
 }

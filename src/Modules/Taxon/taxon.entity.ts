@@ -1,10 +1,10 @@
 import { Column, Entity, ObjectId, ObjectIdColumn } from 'typeorm';
 import { ParameterEntity } from '../Parameters/parameters.entity';
-import { SeuilEntity } from './seuil.entity';
+import { ThresholdEntity } from './threshold.entity';
 import { NomenclatureEntity } from '../Nomenclature/nomenclature.entity';
 
-@Entity('plancton')
-export class PlanctonEntity {
+@Entity('taxon')
+export class TaxonEntity {
   @ObjectIdColumn()
   _id: ObjectId;
 
@@ -16,8 +16,8 @@ export class PlanctonEntity {
   parameters: ParameterEntity[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @Column((type) => SeuilEntity)
-  seuils: SeuilEntity[];
+  @Column((type) => ThresholdEntity)
+  thresholds: ThresholdEntity[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @Column((type) => NomenclatureEntity)

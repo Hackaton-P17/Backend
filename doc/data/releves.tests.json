@@ -1,0 +1,111 @@
+[
+    {
+    "date": "28/04/2024",
+    "station": {
+      "name": "Port d'Amsterdam"
+    },
+    "description": "<p>Mon joli relevé de fin Avril</p>",
+    "parameters": [
+      {
+        "valeur": 0.26,
+        "parameter": {
+          "name": "°C",
+          "unite": "°C",
+          "type": "number"
+        }
+      }
+    ],
+    "planctons": [
+      {
+        "plancton": {
+          "name": "Alexandrium"
+        },
+        "quantite": 10556
+      }
+    ]
+  },
+  {
+    "date": "14/04/2024",
+    "station": {
+      "name": "Annivaisaire"
+    },
+    "description": "<p>Annivaisaire de Dorillon</p>",
+    "parameters": [
+      {
+        "valeur": 22,
+        "parameter": {
+          "name": "Années",
+          "unite": "ans",
+          "type": "number"
+        }
+      },
+      {
+        "valeur": 192.5,
+        "parameter": {
+          "name": "Taille",
+          "unite": "cm",
+          "type": "number"
+        }
+      },
+      {
+        "valeur": 71,
+        "parameter": {
+          "name": "Poid",
+          "unite": "kg",
+          "type": "number"
+        }
+      }
+    ],
+    "planctons": [
+      {
+        "plancton": {
+          "name": "Dorillon"
+        },
+        "quantite": 1
+      }
+    ]
+  },
+  {
+    "date": "08/01/2115",
+    "station": {
+      "name": "fin du monde"
+    },
+    "description": "<p>extinction de de tout gouvernement</p>",
+    "parameters": [
+      {
+        "valeur": 365,
+        "parameter": {
+          "name": "jours",
+          "unite": "journée",
+          "type": "number"
+        }
+      },
+      {
+        "valeur": 16592077018,
+        "parameter": {
+          "name": "Population décédé",
+          "unite": "mort",
+          "type": "number"
+        }
+      },
+      {
+        "valeur": 71,
+        "parameter": {
+          "name": "Poid",
+          "unite": "kg",
+          "type": "number"
+        }
+      }
+    ],
+    "planctons": [
+      {
+        "plancton": {
+          "name": "DoomsDay"
+        },
+        "quantite": 1
+      }
+    ]
+  }
+]
+
+  

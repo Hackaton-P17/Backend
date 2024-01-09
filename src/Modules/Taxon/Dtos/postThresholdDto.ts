@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { SeuilType } from '../seuil.entity';
+import { ThresholdType } from '../threshold.entity';
 
-export class PostSeuilDto {
+export class PostThresholdDto {
   @ApiProperty()
   minimum: number;
 
@@ -12,5 +12,5 @@ export class PostSeuilDto {
   color: string;
 
   @ApiProperty()
-  type: SeuilType;
+  type: ThresholdType;
 }

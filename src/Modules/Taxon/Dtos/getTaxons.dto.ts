@@ -1,9 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ParameterEntity } from 'src/Modules/Parameters/parameters.entity';
-import { SeuilEntity } from '../seuil.entity';
+import { ThresholdEntity } from '../threshold.entity';
 import { ObjectId } from 'typeorm';
 
-export class GetPlanctonDto {
+export class GetTaxonDto {
 
   @ApiProperty()
   _id: string;
@@ -17,6 +17,6 @@ export class GetPlanctonDto {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty()
-  seuils: SeuilEntity[];
+  thresholds: ThresholdEntity[];
 
 }

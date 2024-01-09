@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional } from 'class-validator';
-import { PostSeuilDto } from 'src/Modules/Plancton/Dtos/postSeuilDto';
+import { PostThresholdDto } from 'src/Modules/Taxon/Dtos/postThresholdDto';
 
 export class PostParameterDto {
   @ApiProperty()
@@ -17,7 +17,7 @@ export class PostParameterDto {
   @IsOptional()
   type: string;
 
-  @ApiProperty({ default: [], type: () => PostSeuilDto })
+  @ApiProperty({ default: [], type: () => PostThresholdDto })
   @IsOptional()
-  seuils: PostSeuilDto[];
+  thresholds: PostThresholdDto[];
 }
