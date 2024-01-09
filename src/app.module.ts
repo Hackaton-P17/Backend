@@ -18,10 +18,13 @@ import { PlanctonEntity } from './Modules/Plancton/plancton.entity';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot({
+      authSource: 'admin',
       type: 'mongodb',
       host: process.env.DATABASE_HOST,
       port: parseInt(process.env.DATABASE_PORT, 10) || 27017,
       database: process.env.DATABASE_NAME,
+      username: process.env.DATABASE_USERNAME,
+      password: process.env.DATABASE_PASSWORD,
       entities: [ReleveEntity, PlanctonEntity],
       synchronize: true,
     }),
