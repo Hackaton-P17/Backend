@@ -1,7 +1,7 @@
 import { Column, Entity, ObjectId, ObjectIdColumn } from 'typeorm';
 
 @Entity('releve')
-export class Releve {
+export class ReleveEntity {
   @ObjectIdColumn()
   _id: ObjectId;
 
