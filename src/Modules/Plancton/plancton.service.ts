@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PlanctonEntity } from './plancton.entity';
-import { MongoRepository } from 'typeorm';
 import { PostPlanctonDto } from './Dtos/postPlancton.dto';
+import { PatchPlanctonDto } from './Dtos/patchPlancton.dto';
+import { MongoRepository } from 'typeorm/repository/MongoRepository';
 
 @Injectable()
 export class PlanctonService {
@@ -10,20 +11,20 @@ export class PlanctonService {
     @InjectRepository(PlanctonEntity)
     private readonly planctonRepository: MongoRepository<PlanctonEntity>,
   ) {}
-  async getAllPlancton() {
-    await this.planctonRepository.find();
+  async getAllPlancton() : Promise<PlanctonEntity[]>{
+    return await this.planctonRepository.find();
   }
 
   async getPlanctonById(id : string) : Promise<PlanctonEntity>{
     return await this.planctonRepository.findOneBy(id);
   }
 
-  async insertOne(id:string,planctonDto: PostPlanctonDto) {
+  async insertOne(planctonDto: PostPlanctonDto) {
     await this.planctonRepository.insert(planctonDto);
   }
 
   async patchOne(id:string,planctonDto: PatchPlanctonDto) {
-    await this.planctonRepository.updateOne(id,planctonDto);
+    await this.planctonRepository.updateOne({'_id':id},planctonDto);
   }
 
   async deleteOneById(id: string): Promise<boolean> {

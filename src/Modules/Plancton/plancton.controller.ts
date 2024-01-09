@@ -1,18 +1,18 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
 import { PlanctonEntity } from "./plancton.entity";
 import { PlanctonService } from "./plancton.service";
-import { PlanctonsController } from "./planctons.controller";
-import { PlanctonDto } from './Dtos/postPlancton.dto';
+import { PostPlanctonDto } from './Dtos/postPlancton.dto';
+import { PatchPlanctonDto } from "./Dtos/patchPlancton.dto";
 
 
 @Controller('plancton')
 export class PlanctonController {
   constructor(
     private readonly planctonService: PlanctonService,
-    private readonly planctonsController: PlanctonsController) {}
+    private readonly planctonsController: PlanctonController) {}
 
   @Post()
-  async create(@Body() planctonDto : PlanctonDto) {
+  async create(@Body() planctonDto : PostPlanctonDto) {
     await this.planctonService.insertOne(planctonDto);
   }
 
@@ -22,8 +22,8 @@ export class PlanctonController {
   }
 
   @Patch(':id')
-  async patch(@Param('id') id: string,@Body() planctonDto: PlanctonDto) {
-    await this.planctonService.insertOne(id, planctonDto);
+  async patch(@Param('id') id: string,@Body() planctonDto: PatchPlanctonDto) {
+    await this.planctonService.patchOne(id, planctonDto);
   }
 
   @Delete(':id')
@@ -32,9 +32,8 @@ export class PlanctonController {
   }
 
   @Get()
-  findAll(): string {
-    return 'jolies planctons';
-
+  async findAll(): Promise<PlanctonEntity[]> {
+    return await this.planctonService.getAllPlancton();
   }
 }
 
