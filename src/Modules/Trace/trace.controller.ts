@@ -30,7 +30,7 @@ export class TraceController {
   }
 
   @Get(':id')
-  async getTrace(@Param() id: string) {
+  async getTrace(@Param('id') id: string) {
     return await this.traceService.getOne(id);
   }
 
@@ -40,12 +40,15 @@ export class TraceController {
   }
 
   @Patch(':id')
-  async updateTrace(@Param() id: string, @Body() patchTraceDto: PatchTraceDto) {
+  async updateTrace(
+    @Param('id') id: string,
+    @Body() patchTraceDto: PatchTraceDto,
+  ) {
     return await this.traceService.updateOne(id, patchTraceDto);
   }
 
   @Delete(':id')
-  async removeTrace(@Param() id: string) {
+  async removeTrace(@Param('id') id: string) {
     return await this.traceService.deleteOne(id);
   }
 }
