@@ -8,5 +8,5 @@ export class PostTraceTaxonDto {
   taxon: PostTaxonDto;
   @ApiProperty()
   @IsNotEmpty()
-  quantite: number;
+  value: number;
 }

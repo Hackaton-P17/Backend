@@ -5,7 +5,7 @@ import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto'
 export class PostTraceParameterDto {
   @ApiProperty({ type: () => String })
   @IsNotEmpty()
-  valeur: number | string;
+  value: number | string;
 
   @ApiProperty()
   @IsNotEmpty()
