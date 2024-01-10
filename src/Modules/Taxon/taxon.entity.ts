@@ -11,6 +11,9 @@ export class TaxonEntity {
   @Column()
   name: string;
 
+  @Column()
+  display: 'PRIVATE' | 'BAD' | 'GOOD';
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @Column((type) => ParameterEntity)
   parameters: ParameterEntity[];

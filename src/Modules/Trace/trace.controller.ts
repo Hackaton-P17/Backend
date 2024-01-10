@@ -29,6 +29,16 @@ export class TraceController {
     return await this.traceService.getAllUnwined(getTracesDto);
   }
 
+  @Get('taxons/list')
+  async getTaxonsReportedList() {
+    return await this.traceService.getTaxonsList();
+  }
+
+  @Get('stations/list')
+  async getStationsReportedList() {
+    return await this.traceService.getStationsList();
+  }
+
   @Get(':id')
   async getTrace(@Param('id') id: string) {
     return await this.traceService.getOne(id);
