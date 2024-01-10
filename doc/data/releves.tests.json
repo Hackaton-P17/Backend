@@ -1,11 +1,11 @@
 [
-    {
+  {
     "date": "28/04/2024",
     "station": {
       "name": "Port d'Amsterdam"
     },
     "description": "<p>Mon joli relevé de fin Avril</p>",
-    "parameters": [
+    "parametersTraces": [
       {
         "valeur": 0.26,
         "parameter": {
@@ -15,12 +15,12 @@
         }
       }
     ],
-    "planctons": [
+    "taxonsTraces": [
       {
-        "plancton": {
+        "taxon": {
           "name": "Alexandrium"
         },
-        "quantite": 10556
+        "value": 10556
       }
     ]
   },
@@ -30,7 +30,7 @@
       "name": "Annivaisaire"
     },
     "description": "<p>Annivaisaire de Dorillon</p>",
-    "parameters": [
+    "parametersTraces": [
       {
         "valeur": 22,
         "parameter": {
@@ -56,12 +56,12 @@
         }
       }
     ],
-    "planctons": [
+    "taxonsTraces": [
       {
-        "plancton": {
+        "taxon": {
           "name": "Dorillon"
         },
-        "quantite": 1
+        "value": 1
       }
     ]
   },
@@ -71,7 +71,7 @@
       "name": "fin du monde"
     },
     "description": "<p>extinction de de tout gouvernement</p>",
-    "parameters": [
+    "parametersTraces": [
       {
         "valeur": 365,
         "parameter": {
@@ -97,15 +97,13 @@
         }
       }
     ],
-    "planctons": [
+    "taxonsTraces": [
       {
-        "plancton": {
+        "taxon": {
           "name": "DoomsDay"
         },
-        "quantite": 1
+        "value": 1
       }
     ]
   }
 ]
-
-  

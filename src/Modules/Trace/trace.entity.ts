@@ -19,9 +19,9 @@ export class TraceEntity {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @Column((type) => TraceParameterEntity)
-  parameters: TraceParameterEntity[];
+  parametersTraces: TraceParameterEntity[];
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @Column((type) => TraceTaxonEntity)
-  taxons: TraceTaxonEntity[];
+  taxonsTraces: TraceTaxonEntity[];
 }
