@@ -7,7 +7,7 @@
     "description": "<p>Mon joli relevé de fin Avril</p>",
     "parametersTraces": [
       {
-        "valeur": 0.26,
+        "value": 0.26,
         "parameter": {
           "name": "°C",
           "unite": "°C",
@@ -32,7 +32,7 @@
     "description": "<p>Annivaisaire de Dorillon</p>",
     "parametersTraces": [
       {
-        "valeur": 22,
+        "value": 22,
         "parameter": {
           "name": "Années",
           "unite": "ans",
@@ -40,7 +40,7 @@
         }
       },
       {
-        "valeur": 192.5,
+        "value": 192.5,
         "parameter": {
           "name": "Taille",
           "unite": "cm",
@@ -48,7 +48,7 @@
         }
       },
       {
-        "valeur": 71,
+        "value": 71,
         "parameter": {
           "name": "Poid",
           "unite": "kg",
@@ -73,7 +73,7 @@
     "description": "<p>extinction de de tout gouvernement</p>",
     "parametersTraces": [
       {
-        "valeur": 365,
+        "value": 365,
         "parameter": {
           "name": "jours",
           "unite": "journée",
@@ -81,7 +81,7 @@
         }
       },
       {
-        "valeur": 16592077018,
+        "value": 16592077018,
         "parameter": {
           "name": "Population décédé",
           "unite": "mort",
@@ -89,7 +89,7 @@
         }
       },
       {
-        "valeur": 71,
+        "value": 71,
         "parameter": {
           "name": "Poid",
           "unite": "kg",

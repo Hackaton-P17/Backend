@@ -24,7 +24,7 @@ export class TaxonController {
   }
 
   @Get(':id')
-  async getById(@Param('id') id: string): Promise<TaxonEntity> {
+  async getById(@Param('id') id: string) {
     return await this.taxonService.getTaxonById(id);
   }
 
@@ -34,7 +34,7 @@ export class TaxonController {
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string): Promise<boolean> {
+  async delete(@Param('id') id: string) {
     return await this.taxonService.deleteOneById(id);
   }
 

@@ -112,4 +112,45 @@ export class TraceService {
       patchTraceDto,
     );
   }
+
+  async getTaxonsList() {
+    return await this.traceRepository
+      .aggregate([
+        { $unwind: '$taxonsTraces' },
+        {
+          $group: {
+            _id: {
+              name: '$taxonsTraces.taxon.name',
+            },
+          },
+        },
+        {
+          $replaceRoot: {
+            newRoot: '$_id',
+          },
+        },
+      ])
+      .sort({ name: 1 })
+      .toArray();
+  }
+
+  async getStationsList() {
+    return await this.traceRepository
+      .aggregate([
+        {
+          $group: {
+            _id: {
+              name: '$station.name',
+            },
+          },
+        },
+        {
+          $replaceRoot: {
+            newRoot: '$_id',
+          },
+        },
+      ])
+      .sort({ name: 1 })
+      .toArray();
+  }
 }

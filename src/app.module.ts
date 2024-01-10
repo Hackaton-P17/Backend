@@ -9,6 +9,8 @@ import { StationModule } from './Modules/Station/station.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TraceEntity } from './Modules/Trace/trace.entity';
 import { TaxonEntity } from './Modules/Taxon/taxon.entity';
+import { AuthModule } from './Modules/Auth/auth.module';
+import { UserModule } from './Modules/User/user.module';
 
 @Module({
   imports: [
@@ -33,6 +35,9 @@ import { TaxonEntity } from './Modules/Taxon/taxon.entity';
     TaxonModule,
     TraceModule,
     StationModule,
+    // TODO à implémenter à la fin
+    //AuthModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
