@@ -18,10 +18,39 @@ export class TraceService {
 
   async getAllUnwined(getTracesDto: GetTracesDto) {
     const match = {};
+    if (getTracesDto.date) match['date'] = getTracesDto.date;
     if (getTracesDto.taxons && getTracesDto.taxons.length > 0)
       match['taxonTrace.taxon'] = { $in: getTracesDto.taxons };
     if (getTracesDto.stations && getTracesDto.stations.length > 0)
       match['station'] = { $in: getTracesDto.stations };
+    return {
+      headers: {
+        parameters: await this.getAllUnwinedParameters(match),
+      },
+      reports: await this.traceRepository
+        .aggregate([
+          { $unwind: '$taxonsTraces' },
+          {
+            $project: {
+              date: true,
+              station: '$station.name',
+              description: true,
+              taxonTrace: {
+                taxon: '$taxonsTraces.taxon.name',
+                value: '$taxonsTraces.value',
+              },
+              parametersTraces: true,
+            },
+          },
+          {
+            $match: match,
+          },
+        ])
+        .toArray(),
+    };
+  }
+
+  private async getAllUnwinedParameters(match: any) {
     return await this.traceRepository
       .aggregate([
         { $unwind: '$taxonsTraces' },
@@ -38,12 +67,26 @@ export class TraceService {
           },
         },
         {
-          $match: {
-            date: getTracesDto.date,
-            ...match,
+          $match: match,
+        },
+        { $unwind: '$parametersTraces' },
+        {
+          $group: {
+            _id: {
+              name: '$parametersTraces.parameter.name',
+              unite: '$parametersTraces.parameter.unite',
+              isPublic: '$parametersTraces.parameter.isPublic',
+              type: '$parametersTraces.parameter.type',
+            },
+          },
+        },
+        {
+          $replaceRoot: {
+            newRoot: '$_id',
           },
         },
       ])
+      .sort({ name: 1 })
       .toArray();
   }
 

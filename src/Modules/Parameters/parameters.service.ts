@@ -13,35 +13,23 @@ export class ParametersService {
     return await this.taxonRepository
       .aggregate([
         { $unwind: '$parameters' },
-        { $project: { parameters: true, _id: false } },
-        {
-          $project: {
-            name: '$parameters.name',
-            unite: '$parameters.unite',
-            isPublic: '$parameters.isPublic',
-            type: '$parameters.type',
-          },
-        },
         {
           $group: {
             _id: {
-              name: '$name',
-              unite: '$unite',
-              isPublic: '$isPublic',
-              type: '$type',
+              name: '$parameters.name',
+              unite: '$parameters.unite',
+              isPublic: '$parameters.isPublic',
+              type: '$parameters.type',
             },
           },
         },
         {
-          $project: {
-            name: '$_id.name',
-            unite: '$_id.unite',
-            isPublic: '$_id.isPublic',
-            type: '$_id.type',
-            _id: false,
+          $replaceRoot: {
+            newRoot: '$_id',
           },
         },
       ])
+      .sort({ name: 1 })
       .toArray();
   }
 }
