@@ -12,12 +12,12 @@ export class TaxonService {
     @InjectRepository(TaxonEntity)
     private readonly taxonRepository: MongoRepository<TaxonEntity>,
   ) {}
-  async getAllTaxon(): Promise<TaxonEntity[]> {
+  async getAllTaxon() {
     return await this.taxonRepository.find();
   }
 
-  async getTaxonById(id: string): Promise<TaxonEntity> {
-    return await this.taxonRepository.findOneBy(id);
+  async getTaxonById(id: string) {
+    return await this.taxonRepository.findOneBy({ _id: new ObjectId(id) });
   }
 
   async insertOne(taxonDto: PostTaxonDto) {
