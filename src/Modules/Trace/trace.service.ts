@@ -17,7 +17,6 @@ export class TraceService {
   }
 
   async getAllUnwined(getTracesDto: GetTracesDto) {
-    console.log(getTracesDto);
     const match = {};
     if (getTracesDto.taxons && getTracesDto.taxons.length > 0)
       match['taxonTrace.taxon'] = { $in: getTracesDto.taxons };
