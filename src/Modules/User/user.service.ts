@@ -5,7 +5,9 @@ import { UserEntity } from "./user.entity";
 import { DeleteUserDto } from "./Dtos/deleteUser.dto";
 import { RoleEnum } from "./Enum/role.enum";
 import { PatchUserDto } from "./Dtos/patchUser.dto";
+import { Injectable } from "@nestjs/common";
 
+@Injectable()
 export class UserService{
 
     constructor(
@@ -14,8 +16,8 @@ export class UserService{
       ) {}
 
     async create(postUserDto: PostUserDto) : Promise<boolean> {
-        if((await this.userRepository.findOneBy(postUserDto.username))== null){
-            this.userRepository.insert(postUserDto);
+        if((await this.userRepository.findOneBy({ username:postUserDto.username}))== null){
+            await this.userRepository.insert(postUserDto);
             return true;
         }else{
             throw new Error("Ce username n'est pas disponible")
