@@ -11,6 +11,7 @@ import { TraceEntity } from './Modules/Trace/trace.entity';
 import { TaxonEntity } from './Modules/Taxon/taxon.entity';
 import { AuthModule } from './Modules/Auth/auth.module';
 import { UserModule } from './Modules/User/user.module';
+import { UserEntity } from './Modules/User/user.entity';
 
 @Module({
   imports: [
@@ -27,7 +28,7 @@ import { UserModule } from './Modules/User/user.module';
       database: process.env.DATABASE_NAME,
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
-      entities: [TraceEntity, TaxonEntity],
+      entities: [TraceEntity, TaxonEntity,UserEntity],
       synchronize: true,
     }),
     NomenclatureModule,

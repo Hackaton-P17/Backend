@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsOptional } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsArray, IsNotEmpty, ValidateNested } from 'class-validator';
 import { PostThresholdDto } from 'src/Modules/Taxon/Dtos/postThresholdDto';
 
 export class PostParameterDto {
@@ -12,14 +13,17 @@ export class PostParameterDto {
   unite: string;
 
   @ApiProperty({ default: false })
-  @IsOptional()
+  @IsNotEmpty()
   isPublic: boolean;
 
   @ApiProperty({ default: 'number' })
-  @IsOptional()
+  @IsNotEmpty()
   type: string;
 
-  @ApiProperty({ default: [], type: () => PostThresholdDto })
-  @IsOptional()
+  @ApiProperty({ type: () => [PostThresholdDto] })
+  @IsNotEmpty()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => PostThresholdDto)
   thresholds: PostThresholdDto[];
 }
