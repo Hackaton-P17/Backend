@@ -1,17 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ThresholdType } from '../threshold.entity';
-import { IsHexColor, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsHexColor, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class PostThresholdDto {
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  minimum: number;
+  @IsOptional()
+  minimum: number |null;
 
   @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  maximum: number;
+  @IsOptional()
+  maximum: number|null;
 
   @ApiProperty()
   @IsNotEmpty()

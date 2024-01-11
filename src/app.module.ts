@@ -37,7 +37,7 @@ import { UserEntity } from './Modules/User/user.entity';
     TraceModule,
     StationModule,
     // TODO à implémenter à la fin
-    //AuthModule,
+    AuthModule,
     UserModule,
   ],
   controllers: [],

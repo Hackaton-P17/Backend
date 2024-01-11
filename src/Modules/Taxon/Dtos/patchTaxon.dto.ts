@@ -1,18 +1,18 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto';
 import { PostThresholdDto } from './postThresholdDto';
-import { IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class PatchTaxonDto {
   @ApiProperty()
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   name: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty({ type: () => [PostParameterDto] })
-  @IsNotEmpty()
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => PostParameterDto)
@@ -20,7 +20,7 @@ export class PatchTaxonDto {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty({ type: () => [PostThresholdDto] })
-  @IsNotEmpty()
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => PostThresholdDto)

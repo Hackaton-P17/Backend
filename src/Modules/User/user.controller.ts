@@ -7,8 +7,8 @@ import { PatchUserDto } from "./Dtos/patchUser.dto";
 import { ApiTags } from "@nestjs/swagger";
 
 
-@Controller('user')
-@ApiTags('user')
+@Controller('users')
+@ApiTags('users')
 export class UserController{
 
     constructor(private readonly userService : UserService){}
