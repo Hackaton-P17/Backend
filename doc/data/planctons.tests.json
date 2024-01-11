@@ -7,6 +7,7 @@
         "name": "°C",
         "unite": "°C",
         "isPublic": true,
+        "defaultValue": 25,
         "type": "number",
         "thresholds": [
           {
@@ -27,6 +28,7 @@
         "name": "Ph",
         "unite": "Ph",
         "isPublic": true,
+        "defaultValue": 8.33,
         "type": "number",
         "thresholds": [
           {
@@ -47,6 +49,7 @@
         "name": "Silice",
         "unite": "µmol/L",
         "isPublic": true,
+        "defaultValue": 25,
         "type": "number",
         "thresholds": [
           {
@@ -91,6 +94,7 @@
         "name": "°C",
         "unite": "°C",
         "isPublic": true,
+        "defaultValue": 15,
         "type": "number",
         "thresholds": [
           {
@@ -117,17 +121,18 @@
         "name": "Silice",
         "unite": "µmol/L",
         "isPublic": true,
+        "defaultValue": 150000,
         "type": "number",
         "thresholds": [
           {
-            "minimum": -35,
-            "maximum": 0,
+            "minimum": 0,
+            "maximum": 500,
             "color": "#FF0000",
             "type": "DANGER"
           },
           {
-            "minimum": 10,
-            "maximum": 35,
+            "minimum": 500,
+            "maximum": 1500,
             "color": "#00FF00",
             "type": "POSITIVE"
           }
@@ -161,6 +166,7 @@
         "name": "Cheuveux",
         "unite": "Cheuveu",
         "isPublic": true,
+        "defaultValue": 150000,
         "type": "number",
         "thresholds": [
           {
@@ -187,6 +193,7 @@
         "name": "Vetements",
         "unite": "Vetement",
         "isPublic": true,
+        "defaultValue": 7,
         "type": "number",
         "thresholds": [
           {
