@@ -6,12 +6,14 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { TaxonEntity } from './taxon.entity';
 import { TaxonService } from './taxon.service';
 import { PostTaxonDto } from './Dtos/postTaxon.dto';
 import { PatchTaxonDto } from './Dtos/patchTaxon.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { GetTaxonDto } from './Dtos/getTaxons.dto';
 
 @Controller('taxons')
 @ApiTags('taxons')
@@ -39,7 +41,17 @@ export class TaxonController {
   }
 
   @Get()
-  async findAll(): Promise<TaxonEntity[]> {
-    return await this.taxonService.getAllTaxon();
+  async findAll(@Query() getTaxonsDto: GetTaxonDto): Promise<TaxonEntity[]> {
+    return await this.taxonService.getAllTaxon(getTaxonsDto);
   }
+
+  /*@Get('GOOD')
+  async getPublicGood(): Promise<TaxonEntity[]> {
+    return await this.taxonService.getTaxonByPublic('GOOD');
+  }
+
+  @Get('BAD')
+  async getPublicBad(): Promise<TaxonEntity[]> {
+    return await this.taxonService.getTaxonByPublic('BAD');
+  }*/
 }

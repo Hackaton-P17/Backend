@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { TaxonEntity } from './taxon.entity';
+import { TaxonDisplayType, TaxonEntity } from './taxon.entity';
 import { PostTaxonDto } from './Dtos/postTaxon.dto';
 import { PatchTaxonDto } from './Dtos/patchTaxon.dto';
 import { MongoRepository } from 'typeorm';
 import { ObjectId } from 'mongodb';
+import { GetTaxonDto } from './Dtos/getTaxons.dto';
 
 @Injectable()
 export class TaxonService {
@@ -12,8 +13,8 @@ export class TaxonService {
     @InjectRepository(TaxonEntity)
     private readonly taxonRepository: MongoRepository<TaxonEntity>,
   ) {}
-  async getAllTaxon() {
-    return await this.taxonRepository.find();
+  async getAllTaxon(getTaxonsDto: GetTaxonDto) {
+    return await this.taxonRepository.find({ where: getTaxonsDto });
   }
 
   async getTaxonById(id: string) {
@@ -33,5 +34,9 @@ export class TaxonService {
 
   async deleteOneById(id: string): Promise<boolean> {
     return (await this.taxonRepository.delete(id)).affected > 0;
+  }
+
+  async getTaxonByPublic(type: TaxonDisplayType) {
+    return await this.taxonRepository.find({ where: { display: type } });
   }
 }

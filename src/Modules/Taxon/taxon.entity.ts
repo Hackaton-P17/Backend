@@ -3,6 +3,8 @@ import { ParameterEntity } from '../Parameters/parameters.entity';
 import { ThresholdEntity } from './threshold.entity';
 import { NomenclatureEntity } from '../Nomenclature/nomenclature.entity';
 
+export type TaxonDisplayType = 'PRIVATE' | 'BAD' | 'GOOD';
+
 @Entity('taxon')
 export class TaxonEntity {
   @ObjectIdColumn()
@@ -12,7 +14,7 @@ export class TaxonEntity {
   name: string;
 
   @Column()
-  display: 'PRIVATE' | 'BAD' | 'GOOD';
+  display: TaxonDisplayType;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @Column((type) => ParameterEntity)
