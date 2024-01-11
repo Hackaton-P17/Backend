@@ -4,12 +4,10 @@ import { IsHexColor, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class PostThresholdDto {
   @ApiProperty()
-  @IsNotEmpty()
   @IsNumber()
   minimum: number;
 
   @ApiProperty()
-  @IsNotEmpty()
   @IsNumber()
   maximum: number;
 

@@ -18,7 +18,7 @@ export class PostTaxonDto {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty({ type: () => [PostParameterDto] })
-  @IsOptional()
+  @IsNotEmpty()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => PostParameterDto)
@@ -26,7 +26,7 @@ export class PostTaxonDto {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty({ type: () => [PostThresholdDto] })
-  @IsOptional()
+  @IsNotEmpty()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => PostThresholdDto)

@@ -1,19 +1,21 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
-import { IsOptional } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class GetTracesDto {
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
   date: string;
+
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
   @Transform((params) => {
     return Array.isArray(params.value) ? params.value : [params.value];
   })
   stations: string[];
+  
   @ApiPropertyOptional()
-  @IsOptional()
+  @IsNotEmpty()
   @Transform((params) => {
     return Array.isArray(params.value) ? params.value : [params.value];
   })
