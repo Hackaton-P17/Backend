@@ -1,6 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsArray, IsNotEmpty, ValidateNested } from 'class-validator';
+import {
+  IsArray,
+  IsNotEmpty,
+  IsOptional,
+  ValidateNested,
+} from 'class-validator';
 import { PostThresholdDto } from 'src/Modules/Taxon/Dtos/postThresholdDto';
 
 export class PostParameterDto {
@@ -15,6 +20,10 @@ export class PostParameterDto {
   @ApiProperty({ default: false })
   @IsNotEmpty()
   isPublic: boolean;
+
+  @ApiProperty({ default: 0 })
+  @IsOptional()
+  defaultValue: number;
 
   @ApiProperty({ default: 'number' })
   @IsNotEmpty()

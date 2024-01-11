@@ -12,6 +12,9 @@ export class ParameterEntity {
   isPublic: boolean;
 
   @Column()
+  defaultValue: number;
+
+  @Column()
   type: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
