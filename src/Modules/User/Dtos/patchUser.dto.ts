@@ -11,7 +11,7 @@ export class PatchUserDto{
   @ApiProperty()
   @IsOptional()
   @IsString()
-  password: string;
+  password?: string;
 
   @ApiProperty()
   @IsOptional()

@@ -6,6 +6,7 @@ import { UserEntity } from "./user.entity";
 import { DeleteUserDto } from "./Dtos/deleteUser.dto";
 import { RoleEnum } from "./Enum/role.enum";
 import { PatchUserDto } from "./Dtos/patchUser.dto";
+import * as bcrypt from 'bcrypt';
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
@@ -17,7 +18,9 @@ export class UserService{
       ) {}
 
     async create(postUserDto: PostUserDto) : Promise<boolean> {
-        if((await this.userRepository.findOneBy({ username:postUserDto.username}))== null){
+        const user = await this.userRepository.findOneBy({ username:postUserDto.username});
+        if(user === null){
+            postUserDto.password = await this.hashPassword(postUserDto.password);
             await this.userRepository.insert(postUserDto);
             return true;
         }else{
@@ -38,6 +41,12 @@ export class UserService{
     }
 
     async patchUser(id: string, userDto: PatchUserDto) {
+        const user =  await this.getUserById(id)
+        if(userDto.password!==undefined){
+            if(userDto.password!== user.password){
+                userDto.password = await this.hashPassword(userDto.password)
+            }
+        }
         await this.userRepository.findOneAndUpdate(
           { _id: new ObjectId(id) },
           { $set: userDto },
@@ -57,5 +66,11 @@ export class UserService{
             throw Error("Impossible de supprimer le dernier compte Administrateur!")
         }
       }
+
+    async hashPassword(_password : string){
+        const salt = 10
+        return await bcrypt.hash(_password, salt);
+        
+    }
 
 }
