@@ -20,4 +20,9 @@ export class PostThresholdDto {
   @IsNotEmpty()
   @IsString()
   type: ThresholdType;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsString()
+  publicDescription: string;
 }

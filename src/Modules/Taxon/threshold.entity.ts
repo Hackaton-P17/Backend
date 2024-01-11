@@ -14,4 +14,7 @@ export class ThresholdEntity {
 
   @Column()
   type: ThresholdType;
+
+  @Column()
+  publicDescription: string;
 }
