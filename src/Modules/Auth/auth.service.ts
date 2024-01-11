@@ -14,8 +14,7 @@ export class AuthService{
 
     async login(username: string, password: string) {
         const user = await this.userService.getUserByUsername(username);
-
-        if(user == null){
+        if(user !== null){
         const result = await bcrypt.compare(password, user.password);
 
         const payload = {role : user.role, id : user._id}
