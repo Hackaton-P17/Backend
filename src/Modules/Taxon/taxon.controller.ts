@@ -22,7 +22,7 @@ export class TaxonController {
 
   @Post()
   async create(@Body() taxonDto: PostTaxonDto) {
-    await this.taxonService.insertOne(taxonDto);
+    return await this.taxonService.insertOne(taxonDto);
   }
 
   @Get(':id')
@@ -44,14 +44,4 @@ export class TaxonController {
   async findAll(@Query() getTaxonsDto: GetTaxonDto): Promise<TaxonEntity[]> {
     return await this.taxonService.getAllTaxon(getTaxonsDto);
   }
-
-  /*@Get('GOOD')
-  async getPublicGood(): Promise<TaxonEntity[]> {
-    return await this.taxonService.getTaxonByPublic('GOOD');
-  }
-
-  @Get('BAD')
-  async getPublicBad(): Promise<TaxonEntity[]> {
-    return await this.taxonService.getTaxonByPublic('BAD');
-  }*/
 }

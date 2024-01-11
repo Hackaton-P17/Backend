@@ -22,7 +22,7 @@ export class TaxonService {
   }
 
   async insertOne(taxonDto: PostTaxonDto) {
-    await this.taxonRepository.insert(taxonDto);
+    return await this.taxonRepository.insert(taxonDto);
   }
 
   async patchOne(id: string, taxonDto: PatchTaxonDto) {
