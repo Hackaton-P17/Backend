@@ -1,13 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto';
 import { PostThresholdDto } from './postThresholdDto';
-import {
-  IsArray,
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  ValidateNested,
-} from 'class-validator';
+import { IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class PostTaxonDto {
