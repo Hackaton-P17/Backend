@@ -1,5 +1,6 @@
 import { InjectRepository } from "@nestjs/typeorm";
-import { MongoRepository, ObjectId } from "typeorm";
+import { MongoRepository} from "typeorm";
+import { ObjectId } from 'mongodb';
 import { PostUserDto } from "./Dtos/postUser.dto";
 import { UserEntity } from "./user.entity";
 import { DeleteUserDto } from "./Dtos/deleteUser.dto";
