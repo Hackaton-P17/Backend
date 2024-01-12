@@ -1,14 +1,20 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { PostParameterDto } from 'src/Modules/Parameters/Dtos/postParameter.dto';
 import { PostThresholdDto } from './postThresholdDto';
-import { IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { IsArray, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
+import { TaxonDisplayType } from '../taxon.entity';
 
 export class PatchTaxonDto {
-  @ApiProperty()
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   name: string;
+
+  @ApiPropertyOptional()
+  @IsOptional()
+  @IsString()
+  display: TaxonDisplayType;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   @ApiProperty({ type: () => [PostParameterDto] })
