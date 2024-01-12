@@ -1,14 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostTraceParameterDto } from './postTraceParameter.dto';
 import { PostTraceTaxonDto } from './postTraceTaxon.dto';
-import { IsArray, IsDate, IsNotEmpty, ValidateNested } from 'class-validator';
+import { IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { PostStationDto } from 'src/Modules/Station/Dtos/postStation.dto';
 import { Type } from 'class-transformer';
 
 export class PostTraceDto {
   @ApiProperty()
   @IsNotEmpty()
-  @IsDate()
+  @IsString()
   date: string;
 
   @ApiProperty()
