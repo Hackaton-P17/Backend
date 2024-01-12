@@ -5,6 +5,7 @@ import { MongoRepository } from 'typeorm';
 import { PostTraceDto } from './Dtos/postTrace.dto';
 import { ObjectId } from 'mongodb';
 import { GetTracesDto } from './Dtos/getTraces.dto';
+import { PatchTraceDto } from './Dtos/patchTrace.dto';
 
 @Injectable()
 export class TraceService {
@@ -106,10 +107,10 @@ export class TraceService {
     });
   }
 
-  async updateOne(id: string, patchTraceDto) {
+  async updateOne(id: string, patchTraceDto: PatchTraceDto) {
     return await this.traceRepository.findOneAndUpdate(
       { _id: new ObjectId(id) },
-      patchTraceDto,
+      { $set: patchTraceDto },
     );
   }
 
