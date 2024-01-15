@@ -18,7 +18,6 @@ export class ParametersService {
             _id: {
               name: '$parameters.name',
               unite: '$parameters.unite',
-              isPublic: '$parameters.isPublic',
               type: '$parameters.type',
             },
           },

@@ -76,7 +76,6 @@ export class TraceService {
             _id: {
               name: '$parametersTraces.parameter.name',
               unite: '$parametersTraces.parameter.unite',
-              isPublic: '$parametersTraces.parameter.isPublic',
               type: '$parametersTraces.parameter.type',
             },
           },
