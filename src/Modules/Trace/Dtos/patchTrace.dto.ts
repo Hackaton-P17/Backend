@@ -26,12 +26,12 @@ export class PatchTraceDto {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => PostTraceParameterDto)
-  parameters: PostTraceParameterDto[];
+  parametersTraces: PostTraceParameterDto[];
 
   @ApiProperty({ type: () => [PostTraceTaxonDto] })
   @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => PostTraceTaxonDto)
-  taxons: PostTraceTaxonDto[];
+  taxonsTraces: PostTraceTaxonDto[];
 }
