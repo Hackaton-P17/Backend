@@ -28,7 +28,7 @@ import { UserEntity } from './Modules/User/user.entity';
       database: process.env.DATABASE_NAME,
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
-      entities: [TraceEntity, TaxonEntity,UserEntity],
+      entities: [TraceEntity, TaxonEntity, UserEntity],
       synchronize: true,
     }),
     NomenclatureModule,

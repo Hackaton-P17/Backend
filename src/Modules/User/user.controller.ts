@@ -1,19 +1,25 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
-import { UserService } from "./user.service";
-import { UserEntity } from "./user.entity";
-import { PostUserDto } from "./Dtos/postUser.dto";
-import { DeleteUserDto } from "./Dtos/deleteUser.dto";
-import { PatchUserDto } from "./Dtos/patchUser.dto";
-import { ApiTags } from "@nestjs/swagger";
-
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { UserService } from './user.service';
+import { UserEntity } from './user.entity';
+import { PostUserDto } from './Dtos/postUser.dto';
+import { DeleteUserDto } from './Dtos/deleteUser.dto';
+import { PatchUserDto } from './Dtos/patchUser.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('users')
 @ApiTags('users')
-export class UserController{
+export class UserController {
+  constructor(private readonly userService: UserService) {}
 
-    constructor(private readonly userService : UserService){}
-
-    @Post()
+  @Post()
   async create(@Body() postUser: PostUserDto) {
     await this.userService.create(postUser);
   }
@@ -29,13 +35,15 @@ export class UserController{
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string,@Body() userDto : DeleteUserDto): Promise<boolean> {
+  async delete(
+    @Param('id') id: string,
+    @Body() userDto: DeleteUserDto,
+  ): Promise<boolean> {
     return await this.userService.deleteOneById(id, userDto);
   }
 
   @Get()
-  async findAll() : Promise<UserEntity[]>{
+  async findAll(): Promise<UserEntity[]> {
     return await this.userService.getUsers();
   }
-
 }
