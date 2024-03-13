@@ -7,7 +7,9 @@ services:
   backend:
     container_name: backend-plancton
     image: backend-plancton:latest
-    build: ./app.Dockerfile
+    build:
+      context: .
+      Dockerfile: app.Dockerfile
     restart: always
     environment:
       - DATABASE_HOST=92.222.216.95
