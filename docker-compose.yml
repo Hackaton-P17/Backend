@@ -1,0 +1,36 @@
+version: "1.0"
+
+networks:
+  plancton-net:
+
+services:
+  backend:
+    container_name: backend-plancton
+    image: backend-plancton:latest
+    build: ./app.Dockerfile
+    restart: always
+    environment:
+      - DATABASE_HOST=92.222.216.95
+      - DATABASE_PORT=8082
+      - DATABASE_NAME=plancton
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=root
+      - APP_PORT=3000
+    networks:
+      - plancton-net
+    ports:
+      - "8081:3000"
+
+  database:
+    container_name: database-plancton
+    image: mongo:latest
+    restart: always
+    networks:
+      - plancton-net
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "8082:27017"
+    volumes:
+      - /plancton/database:/data/db
