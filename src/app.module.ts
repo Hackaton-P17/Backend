@@ -21,7 +21,7 @@ import { UserEntity } from './Modules/User/user.entity';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot({
-      authSource: process.env.DATABASE_NAME,
+      authSource: 'admin',
       type: 'mongodb',
       host: process.env.DATABASE_HOST,
       port: parseInt(process.env.DATABASE_PORT, 10) || 27017,
