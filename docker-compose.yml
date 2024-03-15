@@ -1,4 +1,4 @@
-version: "1.0"
+version: '1.0'
 
 networks:
   plancton-net:
@@ -12,16 +12,16 @@ services:
       dockerfile: app.Dockerfile
     restart: always
     environment:
-      - DATABASE_HOST=92.222.216.95
-      - DATABASE_PORT=8082
-      - DATABASE_NAME=plancton
-      - DATABASE_USERNAME=planctonuser
-      - DATABASE_PASSWORD=Zz486%0,&1>)
-      - APP_PORT=3000
+      DATABASE_HOST: 92.222.216.95
+      DATABASE_PORT: 8082
+      DATABASE_NAME: plancton
+      DATABASE_USERNAME: planctonuser
+      DATABASE_PASSWORD: Zz486%0,&1>)
+      APP_PORT: 3000
     networks:
       - plancton-net
     ports:
-      - "8081:3000"
+      - '8081:3000'
 
   database:
     container_name: database-plancton
@@ -33,6 +33,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: planctonuser
       MONGO_INITDB_ROOT_PASSWORD: Zz486%0,&1>)
     ports:
-      - "8082:27017"
+      - '8082:27017'
     volumes:
       - /plancton/database:/data/db
